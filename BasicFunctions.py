@@ -133,6 +133,18 @@ def conjugate(compNum):
         return conjCompNum
 
 def conjugateTranspose(A):
+	"""
+	Computes the conjugate transpose of a matrix.
+
+	This function takes in a matrix and computes the conjugate transpose by first creating a transpose of matrix A, and then
+	replacing each element of the transpose matrix with its conjugate value.
+
+	Args:
+		A: A list of lists, which contain numbers, representing a matrix.
+	Returns:
+		A matrix whose rows are the columns of A, and whose columns are the rows of A. Each element in this matrix should
+		also be the conjugate of it's corresponding value in the matrix A.
+	"""
 	result = transpose(A)
 	for iterator in range(len(A))
 		for element to (len(A[0]))
@@ -141,6 +153,17 @@ def conjugateTranspose(A):
 
 
 def transpose(A):
+	"""
+	Computes the transpose of a matrix.
+
+	This function takes in a matrix and computes its transpose by storing each row of the input matrix into a
+	temporary value, then placing the temporary value into the correct position on the result matrix.
+
+	Args:
+		A: A list of lists, which contain numbers, representing a matrix.
+	Returns:
+		A matrix whose rows are the columns of matrix A, and whose columns are the rows of matrix A.
+	"""
 	result = []
 	for iterator in range(len(A[0])
 		temp = []
