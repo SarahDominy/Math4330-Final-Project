@@ -155,8 +155,8 @@ def backSub(A,b)
 		a = len(A[0])
 		k = a – iterator + 1
 		for j in range(k , (len(A))
-			e = BF.scalVecMulti(A[a – iterator][k], result[k])
-                               y = y + (BF.scalVecMulti((A[a – iterator][a – iterator]**-1), e)
+			e = scalVecMulti(A[a – iterator][k], result[k])
+                               y = y + (scalVecMulti((A[a – iterator][a – iterator]**-1), e)
 		result [a – iterator] = (b[a – iterator] – y
 	return result
 
