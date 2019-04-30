@@ -1,6 +1,7 @@
 Group:
-Chloe Osgood
-Adriana Holley
-Sarah Dominy
-Madison Martin
+Sarah Dominy 
+Adriana Holly 
+Madison Martin 
+Chloe Osgood 
 Charlotte Phillips
+
