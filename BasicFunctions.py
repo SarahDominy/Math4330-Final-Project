@@ -172,7 +172,15 @@ def transpose(A):
 		result.append(temp)
 	return result
 
-def backSub(A,b)
+def backSub(A,b):
+	"""
+	Solves the Ax=b equation by taking a matrix A and vector b and finding the x values.
+	Args:
+		A: a matrix
+		b: a vector
+	Returns:
+		result: a vector containing the x values
+	"""
 	result = []
 	for iterator in range(len(A[0]))
 		a = len(A[0])
