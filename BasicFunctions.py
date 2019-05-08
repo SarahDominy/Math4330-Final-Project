@@ -175,9 +175,12 @@ def transpose(A):
 def backSub(A,b):
 	"""
 	Solves the Ax=b equation by taking a matrix A and vector b and finding the x values.
+	
+	Solves the last row of A and b, then uses that and backsubs it into the above row, repeating until completely solving.
+	
 	Args:
-		A: a matrix
-		b: a vector
+		A: a list of lists representing a uppertriangular matrix 
+		b: a list representing a vector
 	Returns:
 		result: a vector containing the x values
 	"""
@@ -185,10 +188,10 @@ def backSub(A,b):
 	for iterator in range(len(A[0]))
 		a = len(A[0])
 		k = a – iterator + 1
-		for j in range(k , (len(A))
+		for j in range(k , (len(A)):
 			e = scalVecMulti(A[a – iterator][k], result[k])
-                               y = y + (scalVecMulti((A[a – iterator][a – iterator]**-1), e)
-		result [a – iterator] = (b[a – iterator] – y
+                        y = y + (scalVecMulti((A[a – iterator][a – iterator]**-1), e))
+		result [a – iterator] = (b[a – iterator] – y)
 	return result
 
 
