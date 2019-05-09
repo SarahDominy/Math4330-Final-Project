@@ -1,4 +1,4 @@
-import BasicFunction.py as BF
+import BasicFunctions.py as BF
 
 def vandermonde(x):
 	"""
@@ -59,12 +59,13 @@ def backSub(A, b):
 	"""
 	result = b
 	n = len(A)
-	for iterator in range(n):
-		element = n - (1+iterator)
-		result[element] = (b[element] - MS(A[element+1:n], result[element+1:n])) * (1/A[element][element])
+	for i in range(n):
+		e = n - (i+1)
+		MSResult=MS(A, result, e)
+		result[e] = (b[e] - MSResult) * (1/A[e][e])
 	return result
 
-def MS(A, x):
+def MS(A, x, y):
 	"""
 	Computes the sum needed for the backsubstitution algorithm.
 
@@ -74,14 +75,15 @@ def MS(A, x):
 	Args:
 		A: A list of lists of numbers, representing a matrix.
 		x: A list of numbers, representing a vector.
+		y: A integer of where to start k
 	Returns:
 		A real number value, representing the sum of the products of the elements in A and the elements in x.
 	"""
-	result = 0
-	n = len(x)
-	for j in range(n):
+	result=0
+	n = len(x)-1
+	for j in range(y,n):
 		k = j+1
-		result = result + (a[j][k]*x[k])
+		result = result + (A[j][k]*x[k])
 	return result
 
 def dataFitting(x, y):
@@ -104,5 +106,5 @@ def dataFitting(x, y):
 	A = vandermonde(x)
 	modGS(A)
 	Q = BF.inverse(Q)
-	alpha = BF.backSub(Q, y)
+	alpha = backSub(Q, y)
 	return alpha

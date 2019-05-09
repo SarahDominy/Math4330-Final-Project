@@ -16,7 +16,7 @@ def abso(sca):
         absVal = (sca.real ** 2 + sca.imag ** 2) **(1/2)
     elif (sca < 0):
         absVal = - sca
-    else
+    else:
         absVal = sca
     return absVal
 
@@ -146,9 +146,9 @@ def conjugateTranspose(A):
 		also be the conjugate of it's corresponding value in the matrix A.
 	"""
 	result = transpose(A)
-	for iterator in range(len(A))
-		for element to (len(A[0]))
-                        result[iterator][element] = conjugate(result[iterator][element]
+	for iterator in range(len(A)):
+		for element in (len(A[0])):
+                        result[iterator][element] = conjugate(result[iterator][element])
 	return result
 
 
@@ -165,35 +165,12 @@ def transpose(A):
 		A matrix whose rows are the columns of matrix A, and whose columns are the rows of matrix A.
 	"""
 	result = []
-	for iterator in range(len(A[0])
+	for iterator in range(len(A[0]):
 		temp = []
-		for element in range(len(A))
+		for element in range(len(A)):
 			temp.append(A[iterator][element])
 		result.append(temp)
 	return result
-
-def backSub(A,b):
-	"""
-	Solves the Ax=b equation by taking a matrix A and vector b and finding the x values.
-	
-	Solves the last row of A and b, then uses that and backsubs it into the above row, repeating until completely solving.
-	
-	Args:
-		A: a list of lists representing a uppertriangular matrix 
-		b: a list representing a vector
-	Returns:
-		result: a vector containing the x values
-	"""
-	result = []
-	for iterator in range(len(A[0]))
-		a = len(A[0])
-		k = a – iterator + 1
-		for j in range(k , (len(A)):
-			e = scalVecMulti(A[a – iterator][k], result[k])
-                        y = y + (scalVecMulti((A[a – iterator][a – iterator]**-1), e))
-		result [a – iterator] = (b[a – iterator] – y)
-	return result
-
 
 def inverse(Q):
 	"""
