@@ -44,6 +44,46 @@ def modGS(A):
 			r[k][j] = BF.dot(BF.conjugateTranspose(q[k]), v[j])
 			v[j] = v[j] - r[k][j]*q[k]
 
+def backSub(A, b):
+	"""
+	Solves the backsubstitution problem.
+
+	This algorithm solves the equation Ax=b, where x is unknown, by using the rows of the matrix A to solve for an
+	element of x that corresponds to the element in b.
+
+	Args:
+		A: A list of lists of numbers, representing an upper-triangular matrix.
+		b: A list of numbers, representing a vector.
+	Returns:
+		A vector x, which can solve the equation Ax=b
+	"""
+	result = b
+	n = len(A)
+	for iterator in range(n):
+		element = n - (1+iterator)
+		result[element] = (b[element] - MS(A[element+1:n], result[element+1:n])) * (1/A[element][element])
+	return result
+
+def MS(A, x):
+	"""
+	Computes the sum needed for the backsubstitution algorithm.
+
+	This algorithm computes the sum portion of the backsubstitution algorithm by multiplying each element in A
+	by the corresponding element in x, and returning the sum of those products.
+
+	Args:
+		A: A list of lists of numbers, representing a matrix.
+		x: A list of numbers, representing a vector.
+	Returns:
+		A real number value, representing the sum of the products of the elements in A and the elements in x.
+	"""
+	result = 0
+	n = len(x)
+	for j in range(n):
+		k = j+1
+		result = result + (a[j][k]*x[k])
+	return result
+
 def dataFitting(x, y):
 	"""
 	Generates a set of numbers that can solve the equation Ax = y, where A is the set of numbers to solve for.
